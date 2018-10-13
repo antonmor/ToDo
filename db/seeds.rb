@@ -17,3 +17,20 @@ User.create!(
   about:"I am a practical man",
   picture:"none"
   )
+
+puts "Create user admin..."
+
+TodoList.create!(
+    title:"Create new users",
+    description:"Admin could create any user for the systems",
+    iduser_id:User.first.id
+  )
+
+puts "Create for admin to lists to do ..."
+
+TodoItem.create!(
+  content: "Any trouble to do...",
+  todo_lits_id:TodoList.first.id
+  )
+
+puts "Create Items to lists"
