@@ -29,3 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#email config
+/config/environments/production.rb
+/config/environments/development.rb
