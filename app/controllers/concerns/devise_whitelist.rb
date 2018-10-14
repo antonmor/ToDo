@@ -8,4 +8,6 @@ extend ActiveSupport::Concern
     devise_parameter_sanitizer.permit(:sing_up, keys: [:name],[:lastname],[:city],[:country],[:address],[:about],[:address],[:gender],[:picture])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name],[:lastname],[:city],[:country],[:address],[:about],[:address],[:gender],[:picture])
   end
+
+
 end

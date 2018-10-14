@@ -15,6 +15,10 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  
+  <div class="field"> <!--Identifica el id del usuario en todo_list -->
+    <%= form.hidden_field :iduser_id , :value => current_user.id %>
+  </div>
 
   <div class="field">
     <%= form.label :description %>
