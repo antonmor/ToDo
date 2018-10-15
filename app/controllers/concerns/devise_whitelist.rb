@@ -1,13 +1,12 @@
 module DeviseWhiteList
-extend ActiveSupport::Concern
-    include do 
+  extend ActiveSupport::Concern
+  
+  included do
      before_action :configure_permitted_parameters, if: :devise_controller?
-    end
+   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sing_up, keys: [:name],[:lastname],[:city],[:country],[:address],[:about],[:address],[:gender],[:picture])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name],[:lastname],[:city],[:country],[:address],[:about],[:address],[:gender],[:picture])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-
 
 end
