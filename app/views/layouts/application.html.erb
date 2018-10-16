@@ -23,6 +23,10 @@
        <p class="alert"><%= alert %></p>
  <p class="navbar-text pull-right">
         <% if current_user %>
+          
+        <%= image_tag current_user.avatar, :width => 50 %>
+        
+
         Logged in ass <strong><%= current_user.email %></strong>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %> 
         <%= link_to 'Edit profile', edit_user_registration_path %>
