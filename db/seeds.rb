@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  email:"admin@test.com",
+  email:"admin@todo.com",
   name:"Antonio",
   lastname:"Moreno",
   city:"Colima",
@@ -15,7 +15,8 @@ User.create!(
   address:"Aurelio Rodriguez #12",
   gender:"Masculino",
   about:"I am a practical man",
-  picture:"none"
+  picture:"none",
+  password: "moreno"
   )
 
 puts "Create user admin..."
@@ -28,9 +29,11 @@ TodoList.create!(
 
 puts "Create for admin to lists to do ..."
 
+16.times do |k|
 TodoItem.create!(
-  content: "Any trouble to do...",
-  todo_lits_id: TodoList.first.id
+  content: "Task number: #{k}",
+  todo_list_id: TodoList.first.id
   )
+end
 
 puts "Create Items to lists"

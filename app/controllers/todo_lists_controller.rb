@@ -1,4 +1,6 @@
 class TodoListsController < ApplicationController
+  require 'prawn'
+
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
   # GET /todo_lists
   # GET /todo_lists.json
@@ -9,11 +11,23 @@ class TodoListsController < ApplicationController
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
+    @todo_lists = TodoList.find(params[:id])
+     respond_to  do |format|
+        format.html
+        format.pdf do
+          pdf = TodoPdf.new(@todo_lists)
+          send_data pdf.render, filename: "Lis_#{@todo_lists.id}.pdf", type: "application/pdf", disposition: "inline"
+        end
+      end
+      
   end
 
   # GET /todo_lists/new
   def new
     @todo_list = TodoList.new
+      
+     
+
 
   end
 

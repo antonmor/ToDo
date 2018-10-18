@@ -65,4 +65,6 @@ gem 'devise', '~> 4.5'
 
 gem 'image_processing', '~> 1.2'
 
-gem 'prawn'
+gem 'prawn-rails'
+
+gem 'prawn-table'
