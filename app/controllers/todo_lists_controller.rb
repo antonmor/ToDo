@@ -5,7 +5,15 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.where(iduser_id: current_user.id)
+    @todo_lists = TodoList.where(user_id: current_user.id)
+  end
+
+  def toemail
+   # @user = User.where(id: current_user.id)
+    @user = User.find(params[:id])
+   # e_mail = UserMailer.new
+   # e_mail.welcome_email(@user)
+   UserMailer.new_task(@user).deliver_now
   end
 
   # GET /todo_lists/1
@@ -18,17 +26,12 @@ class TodoListsController < ApplicationController
           pdf = TodoPdf.new(@todo_lists)
           send_data pdf.render, filename: "Lis_#{@todo_lists.id}.pdf", type: "application/pdf", disposition: "inline"
         end
-      end
-      
+      end      
   end
 
   # GET /todo_lists/new
   def new
-    @todo_list = TodoList.new
-      
-     
-
-
+  
   end
 
   # GET /todo_lists/1/edit
@@ -83,6 +86,6 @@ class TodoListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:title, :description, :iduser_id)
+      params.require(:todo_list).permit(:title, :description, :user_id)
     end
 end
