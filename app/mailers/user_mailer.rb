@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'ingantonmor@gmail.com'
+  default from: 'example@gmail.com'
 
   def new_task(user)
     @user = user

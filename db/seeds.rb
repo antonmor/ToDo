@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  email:"ingantonmor@gmail.com",
-  name:"Antonio",
-  lastname:"Moreno",
-  city:"Colima",
-  country:"Mexico",
-  address:"Aurelio Rodriguez #12",
-  gender:"Masculino",
-  about:"I am a practical man",
-  picture:"none",
-  password: "moreno"
+  email:"your@gmail.com",
+  name:"yourname",
+  lastname:"yourlastname",
+  city:"yourcity",
+  country:"yourcontry",
+  address:"youraddress",
+  gender:"yourgender",
+  about:"how about you",
+  picture:"xxx",
+  password: "your password"
   )
 
 puts "Create user admin..."
