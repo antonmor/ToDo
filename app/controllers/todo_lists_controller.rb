@@ -9,8 +9,8 @@ class TodoListsController < ApplicationController
   end
 
   def toemail
-   # @user = User.where(id: current_user.id)
-    @user = User.find(params[:id])
+    @user = User.where(id: current_user.id).first
+   # @user = User.find(params[:id])
    # e_mail = UserMailer.new
    # e_mail.welcome_email(@user)
    UserMailer.new_task(@user).deliver_now
@@ -31,7 +31,7 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists/new
   def new
-  
+  @todo_list = TodoList.new
   end
 
   # GET /todo_lists/1/edit
