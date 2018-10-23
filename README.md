@@ -54,3 +54,28 @@ rails db:setup
 ```
 this will create databases, tables and data
 
+# Testing Rspec
+
+I use rspect to test two things:
+<ul>
+  <li>Model</li>
+    <ul>
+      <li>
+        Input user's email
+        Input user's password
+      </li>
+    </ul>
+  <li> Feature Authentication's User</li>  
+</ul>
+
+To do testing at Rails 5.2.1 you need to run this in shell:
+
+```
+bundle exec rspec spec/models/user_spec.rb
+```
+And other Feature Authentication's User test run this in shell: 
+
+```
+bundle exec rspec feature/user_spec.rb
+```
+
