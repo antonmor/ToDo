@@ -70,5 +70,7 @@ gem 'prawn-rails'
 gem 'prawn-table'
 
 group :development, :test do
+  gem 'rspec', '~> 3.8'
   gem 'rspec-rails', '~> 3.8'
 end
+
