@@ -68,3 +68,7 @@ gem 'image_processing', '~> 1.2'
 gem 'prawn-rails'
 
 gem 'prawn-table'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
